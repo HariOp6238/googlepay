@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class account extends StatefulWidget {
   const account({super.key});
@@ -41,6 +42,8 @@ class _accountState extends State<account> {
             Padding(
               padding: const EdgeInsets.all(20),
               child: TextField(
+                keyboardType: TextInputType.number,
+                inputFormatters: [FilteringTextInputFormatter.digitsOnly],
                 style: TextStyle(color: Colors.white),
                 decoration: InputDecoration(
                     filled: true,
@@ -84,7 +87,7 @@ class _accountState extends State<account> {
                     filled: true,
                     fillColor: Color(0xff161719),
                     border: OutlineInputBorder(),
-                    hintText: "enter account number",
+                    hintText: "bank account holder's name",
                     hintStyle: TextStyle(color: Colors.white)),
               ),
             ),
