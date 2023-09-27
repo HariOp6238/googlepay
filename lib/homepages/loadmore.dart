@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:googlepay/users.dart';
+import 'package:googlepay/homepages/users.dart';
 
 class loadmore extends StatefulWidget {
   const loadmore({super.key});
@@ -74,16 +74,15 @@ class _loadmoreState extends State<loadmore> {
                               height: 5,
                             ),
                             CircleAvatar(
-                              backgroundImage: NetworkImage(
-                                dummydata[i].imgurl,
-                              ),
+                              backgroundImage:
+                                  AssetImage(businessdata[i].imageurl),
                               radius: 30,
                             ),
                             SizedBox(
                               height: 0,
                             ),
                             Text(
-                              dummydata[i].Name,
+                              businessdata[i].businessname,
                               style: TextStyle(
                                 color: Colors.white,
                               ),

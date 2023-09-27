@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:googlepay/loadmore.dart';
-import 'package:googlepay/users.dart';
+import 'package:googlepay/homepages/loadmore.dart';
+import 'package:googlepay/homepages/users.dart';
 
 class peoplelist extends StatefulWidget {
   const peoplelist({super.key});

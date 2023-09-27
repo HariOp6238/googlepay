@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:googlepay/account.dart';
+import 'package:googlepay/Home_icons/account.dart';
+import 'package:googlepay/Home_icons/pay_contact.dart';
+import 'package:googlepay/Home_icons/pay_phone.dart';
+import 'package:googlepay/Home_icons/scanner.dart';
+import 'package:googlepay/Home_icons/selftransfer.dart';
 import 'package:googlepay/bills/bills.dart';
-import 'package:googlepay/bitcoin.dart';
 
 import 'package:googlepay/recharge/recharge.dart';
-import 'package:googlepay/scanner.dart';
 
 class transactionicon extends StatefulWidget {
   const transactionicon({super.key});
@@ -120,12 +122,18 @@ class transactioniconstate extends State<transactionicon> {
                     children: [
                       IconButton(
                           iconSize: 30,
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => pay_contact()));
+                          },
                           icon: Icon(
-                            Icons.currency_rupee,
+                            Icons.perm_contact_calendar,
                             color: Colors.white,
                           )),
-                      Text(" Rupee", style: TextStyle(color: Colors.white60))
+                      Text(" pay contact",
+                          style: TextStyle(color: Colors.white60))
                     ],
                   ),
                 ),
@@ -137,12 +145,17 @@ class transactioniconstate extends State<transactionicon> {
                     children: [
                       IconButton(
                           iconSize: 30,
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => selftransfer()));
+                          },
                           icon: Icon(
-                            Icons.account_balance_wallet,
+                            Icons.person,
                             color: Colors.white,
                           )),
-                      Text(" Credits", style: TextStyle(color: Colors.white60))
+                      Text(" Transfer", style: TextStyle(color: Colors.white60))
                     ],
                   ),
                 ),
@@ -180,13 +193,14 @@ class transactioniconstate extends State<transactionicon> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => bitcoin()));
+                                    builder: (context) => pay_phone()));
                           },
                           icon: Icon(
-                            Icons.currency_bitcoin,
+                            Icons.send_to_mobile,
                             color: Colors.white,
                           )),
-                      Text(" Bitcoin", style: TextStyle(color: Colors.white60))
+                      Text(" Pay phone",
+                          style: TextStyle(color: Colors.white60))
                     ],
                   ),
                 ),

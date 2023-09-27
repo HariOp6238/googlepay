@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:googlepay/backgroundimage.dart';
-import 'package:googlepay/icons.dart';
+import 'package:googlepay/Home_icons/icons.dart';
+import 'package:googlepay/homepages/backgroundimage.dart';
 
-import 'package:googlepay/people.dart';
-import 'package:googlepay/peoplelist.dart';
+import 'package:googlepay/homepages/people.dart';
+import 'package:googlepay/homepages/peoplelist.dart';
+
 import 'customappbar.dart';
 
 class homescreen extends StatefulWidget {
