@@ -12,9 +12,9 @@ class _accountState extends State<account> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xff1f2022),
+      backgroundColor: Color(0xff161719),
       appBar: AppBar(
-        backgroundColor: Color(0xff161719),
+        backgroundColor: Color(0xff1f2022),
         actions: [
           Icon(
             Icons.more_vert,
@@ -47,7 +47,7 @@ class _accountState extends State<account> {
                 style: TextStyle(color: Colors.white),
                 decoration: InputDecoration(
                     filled: true,
-                    fillColor: Color(0xff161719),
+                    fillColor: Color(0xff1f2022),
                     border: OutlineInputBorder(),
                     hintText: "enter account number",
                     hintStyle: TextStyle(color: Colors.white)),
@@ -59,7 +59,7 @@ class _accountState extends State<account> {
                 style: TextStyle(color: Colors.white),
                 decoration: InputDecoration(
                     filled: true,
-                    fillColor: Color(0xff161719),
+                    fillColor: Color(0xff1f2022),
                     border: OutlineInputBorder(),
                     hintText: "re-enter account number",
                     hintStyle: TextStyle(color: Colors.white)),
@@ -71,7 +71,7 @@ class _accountState extends State<account> {
                 style: TextStyle(color: Colors.white),
                 decoration: InputDecoration(
                     filled: true,
-                    fillColor: Color(0xff161719),
+                    fillColor: Color(0xff1f2022),
                     border: OutlineInputBorder(),
                     hintText: "IFSC",
                     hintStyle: TextStyle(color: Colors.white),
@@ -85,13 +85,24 @@ class _accountState extends State<account> {
                 style: TextStyle(color: Colors.white),
                 decoration: InputDecoration(
                     filled: true,
-                    fillColor: Color(0xff161719),
+                    fillColor: Color(0xff1f2022),
                     border: OutlineInputBorder(),
                     hintText: "bank account holder's name",
                     hintStyle: TextStyle(color: Colors.white)),
               ),
             ),
-            ElevatedButton(onPressed: () {}, child: Text("submit"))
+            Container(
+              width: 200,
+              height: 40,
+              decoration: BoxDecoration(
+                  color: Colors.grey[600],
+                  borderRadius: BorderRadius.circular(8)),
+              child: Center(
+                  child: Text(
+                "Submit",
+                style: TextStyle(color: Colors.white),
+              )),
+            )
           ],
         ),
       ),
