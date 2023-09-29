@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:googlepay/businesspage/businesspage.dart';
+import 'package:googlepay/homepages/balancechecker.dart';
+import 'package:googlepay/homepages/bill&recharge.dart';
+import 'package:googlepay/homepages/invite.dart';
+import 'package:googlepay/homepages/promotion.dart';
 import 'package:googlepay/homepages/users.dart';
 
 class loadmore extends StatefulWidget {
@@ -16,7 +21,7 @@ class _loadmoreState extends State<loadmore> {
         children: [
           Container(
             color: Color(0xff161719),
-            height: 900,
+            height: 818,
             width: double.infinity,
             child: Column(
               children: [
@@ -33,7 +38,10 @@ class _loadmoreState extends State<loadmore> {
                     trailing: Container(
                       child: Row(
                         children: [
-                          Icon(Icons.shopping_bag_outlined),
+                          Icon(
+                            Icons.shopping_bag_outlined,
+                            color: Colors.white,
+                          ),
                           SizedBox(
                             width: 5,
                           ),
@@ -49,7 +57,7 @@ class _loadmoreState extends State<loadmore> {
                       height: 40,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20),
-                        color: Color(0xff161719),
+                        color: Colors.blue,
                       ),
                     ),
                   ),
@@ -73,10 +81,19 @@ class _loadmoreState extends State<loadmore> {
                             SizedBox(
                               height: 5,
                             ),
-                            CircleAvatar(
-                              backgroundImage:
-                                  AssetImage(businessdata[i].imageurl),
-                              radius: 30,
+                            GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => businesspage(),
+                                    ));
+                              },
+                              child: CircleAvatar(
+                                backgroundImage:
+                                    AssetImage(businessdata[i].imageurl),
+                                radius: 30,
+                              ),
                             ),
                             SizedBox(
                               height: 0,
@@ -87,275 +104,25 @@ class _loadmoreState extends State<loadmore> {
                                 color: Colors.white,
                               ),
                             ),
-                            // SizedBox(
-                            //   height: ,
-                            // ),
                           ],
                         ),
                       );
                     },
                   ),
                 ),
-                Container(
-                  width: double.infinity,
-                  height: 68,
-                  color: Color(0xff161719),
-                  child: Container(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.only(left: 10),
-                          child: Text(
-                            "Bills,Reacharge and more ",
-                            style: TextStyle(color: Colors.white, fontSize: 20),
-                          ),
-                        ),
-                        SizedBox(
-                          height: 5,
-                        ),
-                        Padding(
-                          padding: EdgeInsets.only(left: 30),
-                          child: Text(
-                            "no bills due. try adding these..",
-                            style: TextStyle(color: Colors.white, fontSize: 15),
-                          ),
-                        )
-                      ],
-                    ),
-                  ),
-                ),
-                Container(
-                  width: double.infinity,
-                  height: 80,
-                  color: Color(0xff161719),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      SizedBox(
-                        width: 10,
-                      ),
-                      CircleAvatar(
-                        radius: 30,
-                        child: Center(child: Icon(Icons.monitor)),
-                      ),
-                      CircleAvatar(
-                        radius: 30,
-                        child: Center(child: Icon(Icons.lightbulb)),
-                      ),
-                      CircleAvatar(
-                        radius: 30,
-                        child: Center(child: Icon(Icons.system_update)),
-                      ),
-                      CircleAvatar(
-                        radius: 30,
-                        child: Center(child: Icon(Icons.router)),
-                      ),
-                      SizedBox(
-                        width: 10,
-                      ),
-                    ],
-                  ),
-                ),
-                Container(
-                  width: double.infinity,
-                  height: 20,
-                  color: Color(0xff161719),
-                  child: Row(
-                    children: [
-                      SizedBox(
-                        width: 38,
-                      ),
-                      Text(
-                        "DTH/TV",
-                        style: TextStyle(color: Colors.white),
-                      ),
-                      SizedBox(
-                        width: 25,
-                      ),
-                      Text("Electricity",
-                          style: TextStyle(color: Colors.white)),
-                      SizedBox(
-                        width: 25,
-                      ),
-                      Text("Mobile", style: TextStyle(color: Colors.white)),
-                      SizedBox(
-                        width: 26,
-                      ),
-                      Text("Broadband", style: TextStyle(color: Colors.white)),
-                    ],
-                  ),
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                Container(
-                  width: 60,
-                  height: 30,
-                  child: Center(
-                      child: Text(
-                    "SeeAll",
-                    style: TextStyle(color: Colors.white),
-                  )),
-                  decoration: BoxDecoration(
-                    border: Border.all(color: Colors.white),
-                    borderRadius: BorderRadius.circular(20),
-                    color: Colors.black,
-                  ),
-                ),
+                billsrecharge(),
                 SizedBox(
                   height: 10,
                 ),
-                Container(
-                  width: double.infinity,
-                  height: 40,
-                  color: Color(0xff161719),
-                  child: Padding(
-                    padding: EdgeInsets.only(left: 10),
-                    child: Text(
-                      "Promotions",
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 25,
-                          fontWeight: FontWeight.bold),
-                    ),
-                  ),
+                promo(),
+                SizedBox(
+                  height: 50,
                 ),
-                Container(
-                  width: double.infinity,
-                  height: 90,
-                  color: Color(0xff161719),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      SizedBox(
-                        width: 10,
-                      ),
-                      CircleAvatar(
-                        backgroundImage: NetworkImage(
-                          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsrGohYMV1CzqslLBQ5BCCgR3gOP7cR4Lqow&usqp=CAU",
-                        ),
-                        radius: 30,
-                      ),
-                      CircleAvatar(
-                        radius: 30,
-                        backgroundImage: NetworkImage(
-                            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsrGohYMV1CzqslLBQ5BCCgR3gOP7cR4Lqow&usqp=CAU"),
-                      ),
-                      CircleAvatar(
-                        radius: 30,
-                        backgroundImage: NetworkImage(
-                            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsrGohYMV1CzqslLBQ5BCCgR3gOP7cR4Lqow&usqp=CAU"),
-                      ),
-                      CircleAvatar(
-                        radius: 30,
-                        backgroundImage: NetworkImage(
-                            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsrGohYMV1CzqslLBQ5BCCgR3gOP7cR4Lqow&usqp=CAU"),
-                      ),
-                      SizedBox(
-                        width: 10,
-                      ),
-                    ],
-                  ),
-                ),
-                Container(
-                  width: double.infinity,
-                  height: 30,
-                  color: Color(0xff161719),
-                  child: Row(
-                    children: [
-                      SizedBox(
-                        width: 35,
-                      ),
-                      Text(
-                        "Reward",
-                        style: TextStyle(color: Colors.white),
-                      ),
-                      SizedBox(
-                        width: 30,
-                      ),
-                      Text("Offers", style: TextStyle(color: Colors.white)),
-                      SizedBox(
-                        width: 40,
-                      ),
-                      Text("Refferals", style: TextStyle(color: Colors.white)),
-                      SizedBox(
-                        width: 26,
-                      ),
-                      Text("indi-home", style: TextStyle(color: Colors.white)),
-                    ],
-                  ),
-                ),
-                Container(
-                    width: double.infinity,
-                    height: 210,
-                    color: Color(0xff161719),
-                    child: Column(
-                      children: [
-                        ListTile(
-                          leading: Icon(
-                            Icons.speed,
-                            color: Colors.white,
-                            size: 35,
-                          ),
-                          title: Text(
-                            "Check Your CIBIL Score For",
-                            style: TextStyle(fontSize: 15, color: Colors.white),
-                          ),
-                          subtitle: Text(
-                            "free",
-                            style: TextStyle(fontSize: 15, color: Colors.white),
-                          ),
-                          trailing: Icon(
-                            Icons.arrow_right_outlined,
-                            size: 50,
-                            color: Colors.white,
-                          ),
-                        ),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        ListTile(
-                          leading: Icon(
-                            Icons.history,
-                            color: Colors.white,
-                            size: 35,
-                          ),
-                          title: Text(
-                            "Show transaction history",
-                            style: TextStyle(fontSize: 15, color: Colors.white),
-                          ),
-                          trailing: Icon(
-                            Icons.arrow_right_outlined,
-                            size: 50,
-                            color: Colors.white,
-                          ),
-                        ),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        ListTile(
-                          leading: Icon(
-                            Icons.account_balance,
-                            color: Colors.white,
-                            size: 35,
-                          ),
-                          title: Text(
-                            "Check Balance",
-                            style: TextStyle(fontSize: 15, color: Colors.white),
-                          ),
-                          trailing: Icon(
-                            Icons.arrow_right_outlined,
-                            size: 50,
-                            color: Colors.white,
-                          ),
-                        )
-                      ],
-                    ))
+                balancechecker()
               ],
             ),
           ),
+          invite(),
         ],
       ),
     );

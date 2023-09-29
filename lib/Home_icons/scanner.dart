@@ -11,6 +11,7 @@ class _scannerState extends State<scanner> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(),
       backgroundColor: Colors.lime,
     );
   }

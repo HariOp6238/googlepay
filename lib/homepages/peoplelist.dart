@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:googlepay/homepages/loadmore.dart';
 import 'package:googlepay/homepages/users.dart';
+import 'package:googlepay/peoplepage/peoplepage.dart';
 
 class peoplelist extends StatefulWidget {
   const peoplelist({super.key});
@@ -19,6 +20,7 @@ class _peoplelistState extends State<peoplelist> {
           height: 190,
           width: double.infinity,
           child: GridView.builder(
+            physics: NeverScrollableScrollPhysics(),
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 4,
             ),
@@ -27,11 +29,19 @@ class _peoplelistState extends State<peoplelist> {
               return GridTile(
                 child: Column(
                   children: [
-                    CircleAvatar(
-                      backgroundImage: NetworkImage(
-                        dummydata[i].imgurl,
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => peoplepage()));
+                      },
+                      child: CircleAvatar(
+                        backgroundImage: NetworkImage(
+                          dummydata[i].imgurl,
+                        ),
+                        radius: 30,
                       ),
-                      radius: 30,
                     ),
                     SizedBox(
                       height: 5,
