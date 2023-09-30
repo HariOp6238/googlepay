@@ -40,6 +40,8 @@ dependencies:
   image_picker: ^1.0.4
   dotted_border: ^2.1.0
   flutter_custom_clippers: ^2.1.0
+  percent_indicator: ^4.2.3
+  lottie: ^2.6.0
 
 dev_dependencies:
   flutter_test:
@@ -69,6 +71,7 @@ flutter:
      - assets/village.jpg
      - assets/men.jpg
      - assets/
+     
       
 
   # An image asset can refer to one or more resolution-specific "variants", see

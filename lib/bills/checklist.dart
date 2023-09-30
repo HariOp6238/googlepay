@@ -15,6 +15,7 @@ class _checklistState extends State<checklist> {
         height: 500,
         color: Color(0xff1f2022),
         child: ListView.builder(
+          physics: NeverScrollableScrollPhysics(),
           itemCount: 5,
           itemBuilder: (context, index) {
             return Container(

@@ -16,6 +16,7 @@ class loadmore extends StatefulWidget {
 class _loadmoreState extends State<loadmore> {
   @override
   Widget build(BuildContext context) {
+    var _mediaquery = MediaQuery.of(context);
     return Container(
       child: Column(
         children: [
@@ -63,8 +64,8 @@ class _loadmoreState extends State<loadmore> {
                   ),
                 ),
                 Container(
-                  width: double.infinity,
-                  height: 100,
+                  width: _mediaquery.size.width * 1,
+                  height: _mediaquery.size.height * 0.13,
                   color: Color(0xff161719),
                   child: GridView.builder(
                     physics: NeverScrollableScrollPhysics(),
@@ -98,12 +99,22 @@ class _loadmoreState extends State<loadmore> {
                             SizedBox(
                               height: 0,
                             ),
-                            Text(
-                              businessdata[i].businessname,
-                              style: TextStyle(
-                                color: Colors.white,
+                            Container(
+                              width: _mediaquery.size.width * 1,
+                              height: 22,
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceAround,
+                                children: [
+                                  Text(
+                                    businessdata[i].businessname,
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                ],
                               ),
-                            ),
+                            )
                           ],
                         ),
                       );

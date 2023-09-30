@@ -4,6 +4,7 @@ import 'package:googlepay/Home_icons/pay_contact.dart';
 import 'package:googlepay/Home_icons/pay_phone.dart';
 import 'package:googlepay/Home_icons/scanner.dart';
 import 'package:googlepay/Home_icons/selftransfer.dart';
+import 'package:googlepay/Home_icons/upi.dart';
 import 'package:googlepay/bills/bills.dart';
 
 import 'package:googlepay/recharge/recharge.dart';
@@ -18,6 +19,7 @@ class transactionicon extends StatefulWidget {
 class transactioniconstate extends State<transactionicon> {
   @override
   Widget build(BuildContext context) {
+    var _mediaQuery = MediaQuery.of(context);
     return Stack(
       children: [
         Container(
@@ -30,8 +32,9 @@ class transactioniconstate extends State<transactionicon> {
                 crossAxisCount: 4, mainAxisSpacing: 8, crossAxisSpacing: 8),
             children: [
               InkWell(
-                child: Card(
-                  color: Color(0xff161719),
+                child: Container(
+                  width: _mediaQuery.size.width * 0.5,
+                  height: _mediaQuery.size.height * 0.5,
                   child: Column(
                     children: [
                       IconButton(
@@ -55,8 +58,9 @@ class transactioniconstate extends State<transactionicon> {
                 ),
               ),
               InkWell(
-                child: Card(
-                  color: Color(0xff161719),
+                child: Container(
+                  width: _mediaQuery.size.width * 0.5,
+                  height: _mediaQuery.size.height * 0.5,
                   child: Column(
                     children: [
                       IconButton(
@@ -77,25 +81,35 @@ class transactioniconstate extends State<transactionicon> {
                 ),
               ),
               InkWell(
-                child: Card(
-                  color: Color(0xff161719),
+                child: Container(
+                  width: _mediaQuery.size.width * 0.5,
+                  height: _mediaQuery.size.height * 0.5,
                   child: Column(
                     children: [
                       IconButton(
                           iconSize: 30,
-                          onPressed: () {},
+                          onPressed: () {
+                            setState(() {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => upi(),
+                                  ));
+                            });
+                          },
                           icon: Icon(
                             Icons.payment_outlined,
                             color: Colors.white,
                           )),
-                      Text(" Wallet", style: TextStyle(color: Colors.white60))
+                      Text(" Upi pay", style: TextStyle(color: Colors.white60))
                     ],
                   ),
                 ),
               ),
               InkWell(
-                child: Card(
-                  color: Color(0xff161719),
+                child: Container(
+                  width: _mediaQuery.size.width * 0.5,
+                  height: _mediaQuery.size.height * 0.5,
                   child: Column(
                     children: [
                       IconButton(
@@ -116,8 +130,9 @@ class transactioniconstate extends State<transactionicon> {
                 ),
               ),
               InkWell(
-                child: Card(
-                  color: Color(0xff161719),
+                child: Container(
+                  width: _mediaQuery.size.width * 0.5,
+                  height: _mediaQuery.size.height * 0.5,
                   child: Column(
                     children: [
                       IconButton(
@@ -132,15 +147,16 @@ class transactioniconstate extends State<transactionicon> {
                             Icons.perm_contact_calendar,
                             color: Colors.white,
                           )),
-                      Text(" pay contact",
+                      Text("pay contact",
                           style: TextStyle(color: Colors.white60))
                     ],
                   ),
                 ),
               ),
               InkWell(
-                child: Card(
-                  color: Color(0xff161719),
+                child: Container(
+                  width: _mediaQuery.size.width * 0.5,
+                  height: _mediaQuery.size.height * 0.5,
                   child: Column(
                     children: [
                       IconButton(
@@ -161,8 +177,9 @@ class transactioniconstate extends State<transactionicon> {
                 ),
               ),
               InkWell(
-                child: Card(
-                  color: Color(0xff161719),
+                child: Container(
+                  width: _mediaQuery.size.width * 0.5,
+                  height: _mediaQuery.size.height * 0.5,
                   child: Column(
                     children: [
                       IconButton(
@@ -183,8 +200,9 @@ class transactioniconstate extends State<transactionicon> {
                 ),
               ),
               InkWell(
-                child: Card(
-                  color: Color(0xff161719),
+                child: Container(
+                  width: _mediaQuery.size.width * 0.5,
+                  height: _mediaQuery.size.height * 0.5,
                   child: Column(
                     children: [
                       IconButton(

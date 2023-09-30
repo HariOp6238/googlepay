@@ -18,6 +18,7 @@ class _operatorbuildState extends State<operatorbuild> {
         height: 500,
         color: Color(0xff161719),
         child: ListView.builder(
+          physics: NeverScrollableScrollPhysics(),
           itemCount: Operators.length,
           itemBuilder: (context, index) {
             return Container(

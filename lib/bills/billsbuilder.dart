@@ -17,6 +17,7 @@ class _billbuilderState extends State<billbuilder> {
         height: 350,
         color: Color(0xff1f2022),
         child: GridView(
+          physics: NeverScrollableScrollPhysics(),
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 3, mainAxisSpacing: 5, crossAxisSpacing: 5),
           children: [

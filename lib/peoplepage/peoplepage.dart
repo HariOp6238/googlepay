@@ -56,7 +56,7 @@ class _peoplepageState extends State<peoplepage> {
             ),
           ),
           SizedBox(
-            height: 355,
+            height: 215,
           ),
           Container(
             width: 390,

@@ -33,7 +33,7 @@ class _businesspageState extends State<businesspage> {
       body: Column(
         children: [
           SizedBox(
-            height: 350,
+            height: 210,
           ),
           Center(
             child: Row(

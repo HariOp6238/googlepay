@@ -58,6 +58,6 @@ class business {
 List<business> businessdata = [
   new business("swiggy", "assets/swiggy.png"),
   new business("Zomato", "assets/Zomato_logo.png"),
-  new business("Bookmy Show", "assets/show.png"),
+  new business("Book Show", "assets/show.png"),
   new business("indian oil", "assets/oil.jpg"),
 ];

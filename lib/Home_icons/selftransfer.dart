@@ -47,13 +47,13 @@ class _selftransferState extends State<selftransfer> {
             ),
           ),
           SizedBox(
-            height: 20,
+            height: 15,
           ),
           Padding(
             padding: const EdgeInsets.only(left: 20, top: 10),
             child: Container(
               width: 350,
-              height: 40,
+              height: 45,
               color: Color(0xff161719),
               child: Text(
                 "Manage your money better by adding another accounts to make self transfers",
@@ -77,22 +77,22 @@ class _selftransferState extends State<selftransfer> {
               ),
               Container(
                 width: 200,
-                height: 70,
+                height: 82,
                 color: Color(0xff161719),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
                       "Union bank of india",
-                      style: TextStyle(color: Colors.white, fontSize: 20),
+                      style: TextStyle(color: Colors.white, fontSize: 16),
                     ),
                     SizedBox(
-                      height: 5,
+                      height: 2,
                     ),
                     Text(".........0056",
-                        style: TextStyle(color: Colors.white, fontSize: 18)),
+                        style: TextStyle(color: Colors.white, fontSize: 16)),
                     SizedBox(
-                      height: 5,
+                      height: 2,
                     ),
                     Text("savings account",
                         style: TextStyle(
@@ -135,10 +135,10 @@ class _selftransferState extends State<selftransfer> {
             ],
           ),
           Padding(
-            padding: const EdgeInsets.only(top: 60),
+            padding: const EdgeInsets.only(top: 40),
             child: Container(
               width: 300,
-              height: 300,
+              height: 270,
               child: Image.asset("assets/bank-removebg.png"),
             ),
           )
