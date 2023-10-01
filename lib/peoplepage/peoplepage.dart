@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:googlepay/peoplepage/pay.dart';
 
 class peoplepage extends StatefulWidget {
   const peoplepage({super.key});
@@ -65,19 +66,28 @@ class _peoplepageState extends State<peoplepage> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                Container(
-                  height: 40,
-                  width: 80,
-                  child: Center(
-                    child: Text(
-                      "Pay",
-                      style: TextStyle(
-                          color: Colors.black, fontWeight: FontWeight.bold),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => pay(),
+                        ));
+                  },
+                  child: Container(
+                    height: 40,
+                    width: 80,
+                    child: Center(
+                      child: Text(
+                        "Pay",
+                        style: TextStyle(
+                            color: Colors.black, fontWeight: FontWeight.bold),
+                      ),
                     ),
+                    decoration: BoxDecoration(
+                        color: Colors.blue,
+                        borderRadius: BorderRadius.circular(20)),
                   ),
-                  decoration: BoxDecoration(
-                      color: Colors.blue,
-                      borderRadius: BorderRadius.circular(20)),
                 ),
                 Container(
                   height: 40,

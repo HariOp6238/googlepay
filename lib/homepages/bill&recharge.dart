@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:googlepay/homepages/broadband/broadband.dart';
+import 'package:googlepay/homepages/electricity/electricity.dart';
+import 'package:googlepay/homepages/tvrecharge/dth.dart';
+import 'package:googlepay/recharge/recharge.dart';
 
 class billsrecharge extends StatefulWidget {
   const billsrecharge({super.key});
@@ -52,21 +56,57 @@ class _billsrechargeState extends State<billsrecharge> {
               SizedBox(
                 width: 10,
               ),
-              CircleAvatar(
-                radius: 30,
-                child: Center(child: Icon(Icons.monitor)),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => dth(),
+                      ));
+                },
+                child: CircleAvatar(
+                  radius: 30,
+                  child: Center(child: Icon(Icons.monitor)),
+                ),
               ),
-              CircleAvatar(
-                radius: 30,
-                child: Center(child: Icon(Icons.lightbulb)),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => electricity(),
+                      ));
+                },
+                child: CircleAvatar(
+                  radius: 30,
+                  child: Center(child: Icon(Icons.lightbulb)),
+                ),
               ),
-              CircleAvatar(
-                radius: 30,
-                child: Center(child: Icon(Icons.system_update)),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => recharge(),
+                      ));
+                },
+                child: CircleAvatar(
+                  radius: 30,
+                  child: Center(child: Icon(Icons.system_update)),
+                ),
               ),
-              CircleAvatar(
-                radius: 30,
-                child: Center(child: Icon(Icons.router)),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => Broadband(),
+                      ));
+                },
+                child: CircleAvatar(
+                  radius: 30,
+                  child: Center(child: Icon(Icons.router)),
+                ),
               ),
               SizedBox(
                 width: 10,

@@ -14,6 +14,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         child: TextField(
           style: TextStyle(color: Colors.white),
           decoration: InputDecoration(
+            disabledBorder: InputBorder.none,
             fillColor: Color(0xff1f2022),
             filled: true,
             hintText: 'Pay friends and merchends',
@@ -22,7 +23,9 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
               Icons.search,
               color: Colors.white,
             ),
-            border: OutlineInputBorder(borderRadius: BorderRadius.circular(20)),
+            border: OutlineInputBorder(
+              borderSide: BorderSide.none,
+            ),
           ),
         ),
       ),
