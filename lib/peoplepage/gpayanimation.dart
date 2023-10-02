@@ -3,19 +3,25 @@ import 'package:googlepay/peoplepage/paymentsucess.dart';
 import 'package:lottie/lottie.dart';
 
 class animation extends StatefulWidget {
-  const animation({super.key});
+  final String firstvalue;
+  const animation({super.key, required this.firstvalue});
 
   @override
   State<animation> createState() => _animationState();
 }
 
 class _animationState extends State<animation> {
+  String? quvalue;
   @override
   void initState() {
     super.initState();
-    Future.delayed(Duration(seconds: 2)).then((value) =>
-        Navigator.pushReplacement(
-            context, MaterialPageRoute(builder: (context) => sucess())));
+    Future.delayed(Duration(seconds: 2))
+        .then((value) => Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(
+                builder: (context) => sucess(
+                      newvalue: "$quvalue",
+                    ))));
   }
 
   @override

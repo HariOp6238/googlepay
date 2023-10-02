@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
 import 'package:googlepay/balace&transaction/balancepage.dart';
+import 'package:googlepay/balace&transaction/showtransaction.dart';
 
 class balancechecker extends StatefulWidget {
   const balancechecker({super.key});
@@ -42,20 +43,29 @@ class _balancecheckerState extends State<balancechecker> {
               SizedBox(
                 height: 10,
               ),
-              ListTile(
-                leading: Icon(
-                  Icons.history,
-                  color: Colors.white,
-                  size: 35,
-                ),
-                title: Text(
-                  "Show transaction history",
-                  style: TextStyle(fontSize: 15, color: Colors.white),
-                ),
-                trailing: Icon(
-                  Icons.arrow_right_outlined,
-                  size: 50,
-                  color: Colors.white,
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => showtransaction(),
+                      ));
+                },
+                child: ListTile(
+                  leading: Icon(
+                    Icons.history,
+                    color: Colors.white,
+                    size: 35,
+                  ),
+                  title: Text(
+                    "Show transaction history",
+                    style: TextStyle(fontSize: 15, color: Colors.white),
+                  ),
+                  trailing: Icon(
+                    Icons.arrow_right_outlined,
+                    size: 50,
+                    color: Colors.white,
+                  ),
                 ),
               ),
               SizedBox(

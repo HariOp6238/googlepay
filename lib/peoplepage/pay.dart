@@ -9,8 +9,8 @@ class pay extends StatefulWidget {
 }
 
 class _payState extends State<pay> {
-  get money => _controller;
-  final TextEditingController _controller = TextEditingController();
+  String variableValue = '';
+  TextEditingController _controller = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -58,6 +58,11 @@ class _payState extends State<pay> {
                 textAlign: TextAlign.center,
                 style: TextStyle(color: Colors.white),
                 controller: _controller,
+                onChanged: (newValue) {
+                  setState(() {
+                    variableValue = newValue;
+                  });
+                },
                 decoration: InputDecoration(
                     disabledBorder: UnderlineInputBorder(),
                     hintText: "Enter amount",
@@ -134,7 +139,9 @@ class _payState extends State<pay> {
                                       Navigator.push(
                                           context,
                                           MaterialPageRoute(
-                                            builder: (context) => animation(),
+                                            builder: (context) => animation(
+                                              firstvalue: '$variableValue',
+                                            ),
                                           ));
                                     },
                                     child: Container(
@@ -144,7 +151,11 @@ class _payState extends State<pay> {
                                           color: Colors.blue,
                                           borderRadius:
                                               BorderRadius.circular(20)),
-                                      child: Center(child: Text("pay")),
+                                      child: Center(
+                                          child: Text(
+                                        " pay  Rs.$variableValue",
+                                        style: TextStyle(color: Colors.white),
+                                      )),
                                     ),
                                   )
                                 ],
